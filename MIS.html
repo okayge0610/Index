@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Winter's X MIS</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft JhengHei", "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+/* 導覽列 */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(4px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+}
+
+nav h3 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #b0c4ff, #38bdf8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+nav a {
+    color: #f1f5f9;
+    margin-left: 0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+}
+
+nav a:hover {
+    color: #38bdf8;
+    border-bottom-color: #38bdf8;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #2d3a5e;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.25s;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    margin-left: 10px;
+}
+
+.back-btn:hover {
+    background: #38bdf8;
+    color: #0f172a;
+    transform: translateY(-2px);
+    border-color: #38bdf8;
+    box-shadow: 0 6px 12px rgba(56, 189, 248, 0.3);
+}
+
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: radial-gradient(circle at 10% 30%, rgba(56,189,248,0.08), transparent);
+}
+
+.hero h1 {
+    font-size: 58px;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #e2e8f0, #7dd3fc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    color: #94a3b8;
+    font-size: 1.2rem;
+}
+
+.section {
+    padding: 60px 80px;
+    border-bottom: 1px solid rgba(71, 85, 105, 0.4);
+}
+
+.section h2 {
+    margin-bottom: 28px;
+    font-size: 2rem;
+    display: inline-block;
+    border-left: 6px solid #38bdf8;
+    padding-left: 18px;
+}
+
+/* 卡片通用 */
+.cards {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.card {
+    flex: 1;
+    min-width: 240px;
+    background: #1e293b;
+    padding: 24px;
+    border-radius: 20px;
+    transition: 0.3s;
+    border: 1px solid #334155;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    background: #253450;
+    border-color: #38bdf8;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+    color: #7dd3fc;
+}
+
+.card p, .card li {
+    line-height: 1.5;
+    color: #cbd5e1;
+}
+
+.card ul {
+    margin-top: 14px;
+    padding-left: 20px;
+}
+
+.card li {
+    margin: 8px 0;
+}
+
+/* 按鈕 */
+.btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 28px;
+    background: #38bdf8;
+    color: #0f172a;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: bold;
+    transition: 0.2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+    background: #7dd3fc;
+    transform: scale(1.02);
+    box-shadow: 0 8px 18px rgba(56,189,248,0.3);
+}
+
+#resume .card p {
+    margin-bottom: 14px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 30px;
+    color: #94a3b8;
+    background: #0a0f1c;
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 16px 24px;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .section {
+        padding: 40px 24px;
+    }
+    .hero h1 {
+        font-size: 42px;
+    }
+    .cards {
+        gap: 16px;
+    }
+    .card {
+        min-width: 100%;
+    }
+    .back-btn {
+        margin-left: 0;
+        padding: 5px 14px;
+        font-size: 0.9rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <h3>Winter's MIS</h3>
+    <div class="nav-links">
+        <a href="#about">自介</a>
+        <a href="#job">工作</a>
+        <a href="#resume">自傳</a>
+        <a href="個人網站.html" class="back-btn"> 返回首頁</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>賴建良</h1>
+    <p>MIS工作介紹 X 我具備(需要具備)的技能</p>
+</div>
+
+<div class="section" id="about">
+    <h2>自我介紹</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>背景</h3>
+            <p>資訊管理系學生，具備資料庫與程式基礎，且熟悉企業資訊流程。</p>
+        </div>
+        <div class="card">
+            <h3>何倫碼特質</h3>
+            <p>RI：身體力行 X 獨立理性 >> 具有一定的創造能力但不浮誇，必要時能獨自作業，有自己的一套解題模式。</p>
+        </div>
+    </div>
+</div>
+
+<div class="section" id="job">
+    <h2> MIS工作可能需要的技能</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>後端開發與設計</h3>
+            <p>負責軟體架構分析、模組設計與程式撰寫 。</p>
+        </div>
+        <div class="card">
+            <h3>資料庫與 API</h3>
+            <p>具備 MySQL/SQL Server 經驗，撰寫 RESTful API 與技術文件。</p>
+        </div>
+        <div class="card">
+            <h3>企業流程整合</h3>
+            <p>理解採購、銷售、生產管理等商業情境，參與 ERP/MES 開發。</p>
+        </div>
+        <div class="card">
+            <h3>AI 與創新應用</h3>
+            <p>探索 LLM 等前沿技術，協助團隊導入新工具，保持技術領先。</p>
+        </div>
+    </div>
+
+    <a class="btn" href="https://www.104.com.tw/jobs/search/?jobsource=index_s&keyword=%E8%B3%87%E8%A8%8A%E7%AE%A1%E7%90%86&mode=s&page=1" target="_blank" rel="noopener noreferrer">
+         點我看更多資訊管理相關工作
+    </a>
+</div>
+
+<div class="section" id="resume">
+    <h2> 我的自傳履歷</h2>
+    <div class="card" style="max-width: 100%;">
+        <p>
+        我目前就讀靜宜的資訊管理學系，學習資料庫與資訊系統相關課程，<br>
+        </p>
+        <p>
+        我的何倫碼為<strong style="color:#7dd3fc;">RI</strong>，具備創新思考與實際行動的技能<br>
+        善於分析、突破框架去解決問題，善於蒐集資訊與觀察。
+        </p>
+        <p>
+        希望未來成為能應對任何困難的資訊管理工程師，為此我會持續精進自己，考取MIS的相關證照。
+        </p>
+        <h3 style="margin-top: 16px;"> SKILLS</h3>
+        <ul>
+            <li>SQL / 資料庫設計 (MySQL, SQL Server)</li>
+            <li>Java，HTML，CSS和Python 基礎開發</li>
+            <li>網路基礎 (OSI、TCP/IP、DNS、DHCP)</li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <p> 賴建良 MIS工作介紹 </p>
+</footer>
+
+</body>
+</html>
